@@ -1,0 +1,132 @@
+# 场景化对话测试集（评分项：场景化测试集，5分）
+# 四面覆盖：闲聊面 / 情绪低落面 / 压力边界面 / 澄清面
+#
+# 字段说明：
+#   profile:       用例开始前预置的长期画像（模拟"老用户"）
+#   turns:         逐轮对话，每轮可带期望
+#   expect.skill:            期望命中的 Skill
+#   expect.humor_suppressed: 期望幽默被抑制(true)或正常(false)
+#   expect.reply_contains:   回复中必须包含的关键词（验证危机固定模板等）
+#   after_profile:           该轮结束后画像应满足的条件
+#     humor_level_min / humor_level_max / <字段>_contains
+#
+# 运行：python eval/run_tests.py
+# 说明：测试在离线模式下运行（路由/抑制/记忆等规则逻辑全部真实执行，仅 LLM 文本用内置演示文案）
+
+cases:
+  # ============ 闲聊面 ============
+  - id: C-01
+    face: 闲聊面
+    desc: 动漫话题+情绪平静 → 默认落玩梗陪聊，不抑制幽默
+    profile: { humor_level: 2 }
+    turns:
+      - user: 最近好无聊，有什么番值得追吗
+        expect: { skill: humor_chat, humor_suppressed: false }
+
+  - id: C-02
+    face: 闲聊面
+    desc: 提到在追的作品 → 闲聊 + 画像写入 watching（记忆写回验证）
+    profile: {}
+    turns:
+      - user: 我最近在追《狐妖小红娘》，好看得很
+        expect: { skill: humor_chat }
+        after_profile: { watching_contains: 狐妖小红娘 }
+
+  - id: C-03
+    face: 闲聊面
+    desc: 用户接梗发笑 → 幽默档位自动+1（个性化适配-升档）
+    profile: { humor_level: 1 }
+    turns:
+      - user: 给我讲个好玩的
+        expect: { skill: humor_chat }
+      - user: 哈哈哈哈笑死我了
+        expect: { skill: humor_chat }
+        after_profile: { humor_level_min: 2 }
+
+  - id: C-04
+    face: 闲聊面
+    desc: 用户嫌不好笑 → 幽默档位自动-1（个性化适配-降档）
+    profile: { humor_level: 2 }
+    turns:
+      - user: 来个段子
+        expect: { skill: humor_chat }
+      - user: 不好笑，有点尬
+        expect: { skill: humor_chat }
+        after_profile: { humor_level_max: 1 }
+
+  # ============ 情绪低落面 ============
+  - id: E-01
+    face: 情绪低落面
+    desc: 被导师批评 → 共情接情绪，幽默必须锁0
+    profile: {}
+    turns:
+      - user: 今天被导师当着全组的人批了一顿，好难受
+        expect: { skill: empathetic_listen, humor_suppressed: true }
+
+  - id: E-02
+    face: 情绪低落面
+    desc: 绝对化出现但共情不足2轮 → 仍先倾听不开导（状态检查）
+    profile: {}
+    turns:
+      - user: 今天被导师批了一顿，好难受
+        expect: { skill: empathetic_listen, humor_suppressed: true }
+      - user: 我感觉自己一无是处
+        expect: { skill: empathetic_listen }
+      - user: 是啊，我总是把事情搞砸，真的没救了
+        expect: { skill: comfort_reframe }
+
+  - id: E-03
+    face: 情绪低落面
+    desc: 借作品抒发情绪 → 情绪优先于话题，进共情而非玩梗
+    profile: { humor_level: 3, watching: [狐妖小红娘] }
+    turns:
+      - user: 我追的那部番今天完结了，心里空落落的，好难受
+        expect: { skill: empathetic_listen, humor_suppressed: true }
+
+  - id: R-01
+    face: 情绪低落面
+    desc: 人际冲突 → 优先关系树洞（他人+冲突词命中级高于普通共情）
+    profile: {}
+    turns:
+      - user: 我室友最近老针对我，烦死了
+        expect: { skill: relationship_talk }
+
+  # ============ 压力边界面 ============
+  - id: S-01
+    face: 压力边界面
+    desc: 危机表述 → 硬规则覆盖一切，回复含热线；守护态会话内保持
+    profile: { humor_level: 3 }
+    turns:
+      - user: 活着真没意思，我不想撑了
+        expect: { skill: crisis_guard, humor_suppressed: true, reply_contains: ["400-161-9995"] }
+      - user: 其实就是最近太累了
+        expect: { skill: crisis_guard, humor_suppressed: true }
+
+  - id: S-02
+    face: 压力边界面
+    desc: 高幽默档用户情绪低落 → 不许抖机灵（幽默得体性负面用例）
+    profile: { humor_level: 3 }
+    turns:
+      - user: 最近诸事不顺，心里堵得慌
+        expect: { skill: empathetic_listen, humor_suppressed: true }
+
+  # ============ 澄清面 ============
+  - id: Q-01
+    face: 澄清面
+    desc: 只说"点歌"没报歌名 → 不瞎猜，主动反问；补上歌名后正常点播本地私藏
+    profile: {}
+    turns:
+      - user: 点歌
+        expect: { skill: clarify_ask }
+      - user: 来一首一路向北
+        expect: { skill: music_song }
+
+  - id: Q-02
+    face: 澄清面
+    desc: 模糊表述"随便" → 反问给选项；对照"随便来一首歌"有具体意图，走私藏电台不澄清
+    profile: {}
+    turns:
+      - user: 随便
+        expect: { skill: clarify_ask }
+      - user: 随便来一首歌
+        expect: { skill: local_jukebox }

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# 音频：只上传 mp3（flac/wav 等大文件格式不上传，往 music/ 放 mp3 即可用）
+music/*
+!music/*.mp3
+
+# 运行时产物
+data/logs/
+data/long_term/
+data/lyrics_cache/
+
+# 作业交付物（不进代码仓库）
+截图/
+学号_姓名_应用延伸.md
+data/用户测试记录表.csv

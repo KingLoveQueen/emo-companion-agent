@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="eva-entry-plug" viewBox="0 0 400 800" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="eva-plug-shell" x1="129" y1="0" x2="271" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9aa8a8"/><stop offset=".16" stop-color="#dce3df"/><stop offset=".43" stop-color="#fffff3"/><stop offset=".7" stop-color="#f5f4e7"/><stop offset="1" stop-color="#aab6b3"/>
+    </linearGradient>
+    <linearGradient id="eva-plug-cap" x1="129" y1="0" x2="271" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#82542d"/><stop offset=".25" stop-color="#d19b59"/><stop offset=".57" stop-color="#f5cd87"/><stop offset="1" stop-color="#a2703e"/>
+    </linearGradient>
+    <linearGradient id="eva-plug-gold" x1="129" y1="0" x2="271" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#85621f"/><stop offset=".4" stop-color="#e4bd4f"/><stop offset=".7" stop-color="#f8d96e"/><stop offset="1" stop-color="#a78630"/>
+    </linearGradient>
+    <clipPath id="eva-plug-outline"><rect x="129" y="54" width="142" height="692" rx="71"/></clipPath>
+  </defs>
+  <!-- 背部导轨与定位线独立于白色密封筒，装载时仍保留完整轮廓。 -->
+  <g stroke="var(--boot-line)" stroke-width="1">
+    <path d="M105 115v578m190-578v578M96 115h18m-18 578h18m172-578h18m-18 578h18"/>
+    <path d="M105 202h22m146 0h22M105 588h22m146 0h22" stroke-dasharray="3 4"/>
+  </g>
+  <g clip-path="url(#eva-plug-outline)" stroke="#677778" stroke-width="1.4" stroke-linejoin="round">
+    <rect x="129" y="54" width="142" height="692" rx="71" fill="url(#eva-plug-shell)"/>
+    <path d="M129 54h142v107c-40 9-102 9-142 0z" fill="url(#eva-plug-cap)"/>
+    <path d="M129 158q71 13 142 0v14q-71 13-142 0z" fill="#333e42"/>
+    <path class="eva-plug-band" d="M129 172q71 13 142 0v29q-71 13-142 0z" fill="var(--boot-accent)" stroke="#36444a"/>
+    <path d="M129 202q71 13 142 0M129 257q71 12 142 0M129 571q71 12 142 0M143 212v349m112-349v349" opacity=".6"/>
+    <g class="eva-plug-roll eva-plug-roll-front">
+    <path d="M148 217h20v27h-20zM232 217h20v27h-20zM154 226h8m76 0h8" stroke="#879492"/>
+    <!-- 橙色鼻锥的检修盖、锁孔与通气槽。 -->
+    <path d="M167 76q33-13 66 0l4 33q-37 9-74 0z" fill="#f2c47d"/>
+    <path d="M174 84h52m-48 9h44M151 126v19m98-19v19" stroke="#896a44"/>
+    <g fill="#535d57" stroke="#b98c53">
+      <circle cx="154" cy="111" r="3"/><circle cx="246" cy="111" r="3"/>
+      <circle cx="155" cy="151" r="2.5"/><circle cx="245" cy="151" r="2.5"/>
+    </g>
+    <path d="M180 132q20-10 40 0l-4 9h-32z" fill="#333e42" stroke="#a37b46"/>
+    <!-- 长筒侧面机体喷字与面板接缝。 -->
+    <g transform="rotate(90 200 338)" fill="#344247" stroke="none" text-anchor="middle">
+      <text x="200" y="336" class="eva-plug-stencil">EVA-<tspan data-boot-unit>02</tspan></text>
+      <text x="200" y="353" class="eva-plug-micro">NERV · DIRECT ENTRY SYSTEM</text>
+    </g>
+    <path d="M157 281h-8v110h8m86-110h8v110h-8" stroke="#93a09c"/>
+    <path d="M166 406h68v9h-68z" fill="#e6e8dc"/>
+    <path d="M176 410h48" stroke="var(--boot-accent)"/>
+    <!-- L.C.L. 观察舱；驾驶员轮廓由同一坐标系的透明蒙版覆盖。 -->
+    <path d="M162 433l-10 13v83l10 14h76l10-14v-83l-10-13z" fill="#b3bfba" stroke="#536467" stroke-width="2"/>
+    <path d="M168 443h64l7 9v71l-7 10h-64l-7-10v-71z" fill="#182b30"/>
+    <path d="M166 450h12m44 0h12m-68 73h12m44 0h12" stroke="var(--boot-accent)" stroke-width="2"/>
+    <path d="M173 462h54m-54 13h54m-54 13h54m-54 13h54m-54 13h54" stroke="#709c94" opacity=".17"/>
+    <g fill="#657571" stroke="#dce2d5"><circle cx="160" cy="440" r="2"/><circle cx="240" cy="440" r="2"/><circle cx="160" cy="535" r="2"/><circle cx="240" cy="535" r="2"/></g>
+    <path d="M185 552h30m-25 6h20" stroke="#73817b"/>
+    </g>
+    <g class="eva-plug-roll eva-plug-roll-back" stroke="#84918b">
+      <path d="M177 228h46v330h-46zM188 236v310m24-310v310" fill="#e8e9dd"/>
+      <path d="M181 276h38m-38 9h38m-38 9h38m-38 155h38m-38 9h38m-38 9h38"/>
+      <g transform="rotate(90 200 357)" fill="#465450" stroke="none" text-anchor="middle">
+        <text x="200" y="358" class="eva-plug-micro">NERV / SERVICE ACCESS · L.C.L.</text>
+      </g>
+      <path d="M181 506h38v28h-38z" fill="#d5ad4c"/><path d="m188 528 12-17 12 17z" fill="#344247"/>
+      <path d="M188 85h24v55h-24z" fill="#bd894e"/><path d="M193 96h14m-14 8h14m-14 8h14m-14 8h14"/>
+    </g>
+    <!-- 与参考模型相同的金色宽环、石墨色护套和橙色三角整流片。 -->
+    <g class="eva-plug-collar">
+      <path d="M129 583q71 12 142 0v55q-71 12-142 0z" fill="url(#eva-plug-gold)" stroke="#494f41" stroke-width="2"/>
+      <path d="M129 582q71 12 142 0m-142 59q71 12 142 0" stroke="#29383d" stroke-width="6"/>
+      <path d="M129 646q71 12 142 0v53q-71 12-142 0z" fill="#4a595d" stroke="#304247"/>
+      <path class="eva-plug-roll eva-plug-roll-front" d="M145 654l15 37h-17zM178 657l14 39h-22zM211 658l12 38h-22zM245 654l10 36h-22z" fill="#ee9b41" stroke="#263c42" stroke-width="2"/>
+      <path d="M129 702q71 12 142 0" stroke="#7a8780"/>
+    </g>
+    <path d="M168 718q32 9 64 0m-53 10q21 5 42 0" stroke="#97a19a"/>
+    <path d="M145 90v61m0 63v347m0 148v9" stroke="#fffbe5" stroke-width="3" opacity=".5"/>
+  </g>
+  <rect x="129" y="54" width="142" height="692" rx="71" stroke="#889694" stroke-width="1.8"/>
+  <g class="eva-plug-callouts" fill="none" stroke="var(--boot-line)" stroke-width="1">
+    <path d="M269 228h35v-15h28M130 486H83v18H65M270 610h36v18h24"/>
+    <g fill="var(--boot-dim)" stroke="none" class="eva-plug-micro"><text x="299" y="205">A10</text><text x="41" y="518">L.C.L.</text><text x="290" y="642">LOCK</text></g>
+    <circle cx="269" cy="228" r="2" fill="var(--boot-accent)"/><circle cx="130" cy="486" r="2" fill="var(--boot-accent)"/>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+{
+ "_comment": "小狐私藏歌单的元数据补充表：key 为 music/ 目录下的文件名，tags 是情绪标签（emo/治愈/燃/平静/开心），note 是推歌时可带出的一句话注解。文件本身由 load_library 扫描 music/ 目录自动发现，这里只补人工标注；新增歌曲后直接放文件即可，不标注也能播。",
+ "songs": {
+  "SawanoHiroyuki[nZk]、瑞葵 - Avid.flac": {
+   "tags": [
+    "emo",
+    "燃"
+   ],
+   "note": "进击最终季的 ED，前奏一响全是回忆杀",
+   "cover": "/image/132D6AC2FAE9DD2FE134469984606557.jpg"
+  },
+  "Taylor Swift、Bon Iver - exile.flac": {
+   "tags": [
+    "emo",
+    "平静"
+   ],
+   "note": "两个人隔空对唱的那种遗憾感",
+   "cover": "/image/167816B40C1D49E659FA159F89462BD0.jpg"
+  },
+  "Tyron Hapi、Bianca - Lost Control (feat. Bianca).flac": {
+   "tags": [
+    "燃",
+    "开心"
+   ],
+   "note": "节奏一起就不想停的那种",
+   "cover": "/image/23A7AA021AE17BD29FDB1D7C87C05FA1.jpg"
+  },
+  "周杰伦 - 一路向北.mp3": {
+   "tags": [
+    "emo"
+   ],
+   "note": "经典里的经典，适合深夜单曲循环",
+   "cover": "/image/2C8782CF53B713212505C9CA27C5D324.jpg"
+  },
+  "孙燕姿 - 我不难过.mp3": {
+   "tags": [
+    "emo"
+   ],
+   "note": "嘴上说不难过，副歌一进来就绷不住",
+   "cover": "/image/3880A97BAAADE89864E726349F7C22E4.jpg"
+  },
+  "孙燕姿 - 我怀念的.mp3": {
+   "tags": [
+    "emo"
+   ],
+   "note": "KTV 大合唱必留到最后的歌",
+   "cover": "/image/5C30D7714882FA47D78A77450C0BEEC1.jpg"
+  },
+  "梁静茹 - 失忆.flac": {
+   "tags": [
+    "emo"
+   ],
+   "note": "情歌天后的温柔刀",
+   "cover": "/image/6E4DCC147BEB131BAD7FFE8200C43409.jpg"
+  },
+  "澤野弘之、SennaRin - IVORY TOWER (feat. SennaRin).mp3": {
+   "tags": [
+    "燃"
+   ],
+   "note": "澤野弘之的鼓点，懂的都懂",
+   "cover": "/image/76555D32AECC5E2566833A5EEEF9F56E.jpg"
+  },
+  "蔡依林 - 倒带.mp3": {
+   "tags": [
+    "emo"
+   ],
+   "note": "年代感拉满，一开口就是青春",
+   "cover": "/image/7A5CDA555E0E3B9EB5E76D0C33A949EA.jpg"
+  },
+  "谢安琪 - 囍帖街.flac": {
+   "tags": [
+    "emo",
+    "平静"
+   ],
+   "note": "粤语歌里的意难平天花板",
+   "cover": "/image/7AF717EAAC0E0F4FF5264BCA2A61E6F2.jpg"
+  },
+  "谭咏麟 - 讲不出再见.flac": {
+   "tags": [
+    "emo",
+    "平静"
+   ],
+   "note": "离别场合的保留曲目",
+   "cover": "/image/82E3E532C466739404B9D167B23007E8.jpg"
+  },
+  "陈奕迅 - 十面埋伏.flac": {
+   "tags": [
+    "emo"
+   ],
+   "note": "Eason 讲故事式的唱法，越听越有味道",
+   "cover": "/image/835467FFF630B5AA53FB3B58C48702BD.jpg"
+  },
+  "鹿晗 - 勋章.flac": {
+   "tags": [
+    "燃",
+    "开心"
+   ],
+   "note": "emo 的时候听它回血最快",
+   "cover": "/image/8C7CCD948E9E327AC0342FBB2C594610.jpg"
+  }
+ }
+}
