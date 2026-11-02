@@ -2,9 +2,12 @@
 __pycache__/
 *.pyc
 
-# 音频：只上传 mp3（flac/wav 等大文件格式不上传，往 music/ 放 mp3 即可用）
+# 音频：只上传 mp3 与指定 flac（往 music/ 放音频文件即可用）
 music/*
 !music/*.mp3
+!music/陈奕迅 - 十面埋伏.flac
+!music/梁静茹 - 失忆.flac
+!music/SawanoHiroyuki[nZk]、瑞葵 - Avid.flac
 
 # 运行时产物
 data/logs/
