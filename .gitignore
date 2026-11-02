@@ -7,7 +7,7 @@ music/*
 !music/*.mp3
 !music/陈奕迅 - 十面埋伏.flac
 !music/梁静茹 - 失忆.flac
-!music/SawanoHiroyuki[nZk]、瑞葵 - Avid.flac
+!music/SawanoHiroyuki\[nZk\]、瑞葵 - Avid.flac
 
 # 运行时产物
 data/logs/
